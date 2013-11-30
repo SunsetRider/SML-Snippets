@@ -1,5 +1,16 @@
-fun test(l2:string,ls:string list,s1:string) = if String.isSubstring (hd ls) s1 then
+fun same_string (s1 : string, s2 : string) =
+    s1 = s2
 
-                       (TextIO.openOut l2; TextIO.inputLine (hd(ls)), test(l2,tl(ls),s1)) else 
+fun all_except_option (str, xs) =
+	case xs of 
+    	 [] => NONE 
+       | (x::xs') => case (same_string(str,x)) of 
+               			  true => SOME xs' 
+            			| false => case all_except_option(str,xs') of 
+                   						NONE => NONE 
+                    				  | SOME xs'' => SOME (x::xs'') 
 
-                       test(l2,tl(ls),s1);
+fun t x = let fun loop nil = loop(1::nil)
+                | loop l   = fn l => hd l
+          in loop nil
+          end

@@ -13,3 +13,4 @@ structure Hello =
        fun main (name, argv) =
            RunCML.doit (fn () => ignore (spawn hello), NONE)
    end
+   
