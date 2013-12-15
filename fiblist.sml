@@ -6,4 +6,5 @@ fun fiblist 0 = []
                       | fib n = fib(n-1) + fib(n-2);
                 in  
                     fiblist(n-1) @ [(fib n)] 
-                end 
+                end
+                 

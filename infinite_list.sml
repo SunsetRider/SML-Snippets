@@ -24,8 +24,7 @@ fun NULL NIL = true
 fun FILTER f l = if NULL l
                  then NIL
                  else if f (HD l)
-                      then CONS(HD l, fn () => 
-                                         (FILTER f (TL l)))
+                      then CONS(HD l, fn () => (FILTER f (TL l)))
                       else FILTER f (TL l);
 
 (* take first n elements as a sublist *)
